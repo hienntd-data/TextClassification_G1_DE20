@@ -20,7 +20,7 @@
     "--cap-add=SYS_PTRACE",
     "--security-opt seccomp=unconfined"
   ],
-  "updateContentCommand": "[ -f environment.yml ] && conda env create -f environment.yml && conda activate my_environment && echo '✅ Conda environment created and activated' || echo '❌ Conda environment creation failed'; [ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; pip3 install --user streamlit; echo '✅ Packages installed and Requirements met'",
+  "updateContentCommand": "[ -f environment.yml ] && conda env create -f environment.yml && conda activate py38 && echo '✅ Conda environment created and activated' || echo '❌ Conda environment creation failed'; echo '✅ Packages installed and Requirements met'",
   "postAttachCommand": {
     "server": "streamlit run app.py --server.enableCORS false --server.enableXsrfProtection false"
   },
