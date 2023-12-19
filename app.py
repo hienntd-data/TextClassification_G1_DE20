@@ -149,6 +149,7 @@ def preprocess_text(text):
     ]
     clean_words = [word.strip(',').strip().lower() for word in word_list  if word not in stop_words]
     clean_words = [re.sub(r'([^\s\w]|)+', '', sentence) for sentence in clean_words if sentence!='']
+    clean_words = list(filter(None, clean_words))
     return clean_words
 
 
